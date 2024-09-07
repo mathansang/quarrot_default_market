@@ -1,0 +1,757 @@
+[index_krw_cms10y]
+category = "index"
+index_type = "swap"
+familyname = 'irs_krw_cd'
+tenor = '10y'
+
+[index_krw_cms2y]
+category = "index"
+index_type = "swap"
+familyname = 'irs_krw_cd'
+tenor = '2y'
+
+[index_krw_cd3m]
+category = "index"
+index_type = "ibor"
+familyname = 'index_krw_cd'
+tenor = '3m'
+
+[index_krw_cd]
+category = "index"
+index_type = "ibor"
+familyname = 'index_krw_cd'
+currency = "krw"
+settlementDays = 1
+calendar = "kor"
+dayCounter = "Actual/365 (Fixed) day counter"
+convention = 1
+endOfMonth = false
+
+[index_krw_kofr]
+category = "index"
+index_type = "overnight"
+familyname = 'kofr'
+settlementDays = 1
+currency = "krw"
+calendar = "kor"
+dayCounter = "Actual/365 (Fixed) day counter"
+
+[index_usd_sofr]
+category = "index"
+index_type = "overnight"
+familyname = 'sofr'
+settlementDays = 0
+currency = "usd"
+calendar = "usa"
+dayCounter = "Actual/360 day counter"
+
+[index_aud_aonia]
+category = "index"
+index_type = "overnight"
+familyname = 'aonia'
+settlementDays = 0
+currency = "aud"
+calendar = "aus"
+dayCounter = "Actual/365 (Fixed) day counter"
+
+[index_cad_corra]
+category = "index"
+index_type = "overnight"
+familyname = 'corra'
+settlementDays = 0
+currency = "cad"
+calendar = "can"
+dayCounter = "Actual/365 (Fixed) day counter"
+
+[index_eur_estr]
+category = "index"
+index_type = "overnight"
+familyname = 'estr'
+settlementDays = 0
+currency = "eur"
+calendar = "eur"
+dayCounter = "Actual/360 day counter"
+
+[index_eur_eonia]
+category = "index"
+index_type = "overnight"
+familyname = 'eonia'
+settlementDays = 0
+currency = "eur"
+calendar = "eur"
+dayCounter = "Actual/360 day counter"
+
+[index_gbp_sonia]
+category = "index"
+index_type = "overnight"
+familyname = 'sonia'
+settlementDays = 0
+currency = "gbp"
+calendar = "gbr"
+dayCounter = "Actual/365 (Fixed) day counter"
+
+[index_jpy_tona]
+category = "index"
+index_type = "overnight"
+familyname = 'tona'
+settlementDays = 0
+currency = "jpy"
+calendar = "jpn"
+dayCounter = "Actual/365 (Fixed) day counter"
+
+
+[swap_krw_cd]
+category = "swap"
+swap_type = "ibor"
+currency = "krw"
+fixedFrequency = "Quarterly"
+fixedConvention = 1
+fixedDayCounter = "Actual/365 (Fixed) day counter"
+settlementDays = 1
+calendar = "kor"
+iborIndex = "index_krw_cd"
+iborIndexTenor = "3m"
+
+[swap_krw_kofr]
+category = "swap"
+swap_type = "overnight"
+currency = "krw"
+settlementDays = 1
+paymentLag = 2
+paymentConvention = 1
+frequency = 'Quarterly'
+overnightIndex = 'index_krw_kofr'
+calendar = "kor"
+averagingMethod = 1
+
+
+[swap_aud_aonia]
+category = "swap"
+swap_type = "overnight"
+currency = "aud"
+settlementDays = 1
+paymentLag = 2
+paymentConvention = 1
+frequency = 'Annual'
+overnightIndex = 'index_aud_aonia'
+calendar = "aus"
+averagingMethod = 1
+
+
+[swap_cad_corra_short]
+category = "swap"
+swap_type = "overnight"
+currency = "cad"
+settlementDays = 1
+paymentLag = 1
+paymentConvention = 1
+frequency = 'Annual'
+overnightIndex = 'index_cad_corra'
+calendar = "can"
+averagingMethod = 1
+
+
+[swap_cad_corra_long]
+category = "swap"
+swap_type = "overnight"
+currency = "cad"
+settlementDays = 1
+paymentLag = 1
+paymentConvention = 1
+frequency = 'Semiannual'
+overnightIndex = 'index_cad_corra'
+calendar = "can"
+averagingMethod = 1
+
+
+[swap_eur_estr]
+category = "swap"
+swap_type = "overnight"
+currency = "eur"
+settlementDays = 2
+paymentLag = 1
+paymentConvention = 1
+frequency = 'Annual'
+overnightIndex = 'index_eur_estr'
+calendar = "eur"
+averagingMethod = 1
+
+
+[swap_gbp_sonia]
+category = "swap"
+swap_type = "overnight"
+currency = "gbp"
+settlementDays = 0
+paymentLag = 0
+paymentConvention = 1
+frequency = 'Annual'
+overnightIndex = 'index_gbp_sonia'
+calendar = "gbr"
+averagingMethod = 1
+
+
+[swap_jpy_tona]
+category = "swap"
+swap_type = "overnight"
+currency = "jpy"
+settlementDays = 2
+paymentLag = 2
+paymentConvention = 1
+frequency = 'Annual'
+overnightIndex = 'index_jpy_tona'
+calendar = "jpn"
+averagingMethod = 1
+
+
+[swap_usd_sofr]
+category = "swap"
+swap_type = "overnight"
+currency = "usd"
+settlementDays = 2
+paymentLag = 2
+paymentConvention = 1
+frequency = 'Annual'
+overnightIndex = 'index_usd_sofr'
+calendar = "usa"
+averagingMethod = 1
+
+
+[zero_usd_sofr]
+category = "yieldcurve"
+swap_type = "overnight"
+cash_member_code = "index_usd_sofr"
+swap_member_code = "swap_usd_sofr"
+overnightIndex = 'index_usd_sofr'
+calendar = "usa-nyse,usa"
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[zero_aud_aonia]
+category = "yieldcurve"
+swap_type = "overnight"
+cash_member_code = "index_aud_aonia"
+swap_member_code = "swap_aud_aonia"
+overnightIndex = 'index_aud_aonia'
+calendar = "aus"
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[zero_cad_corra]
+category = "yieldcurve"
+swap_type = "overnight"
+cash_member_code = "index_cad_corra"
+swap_member_code = { tenor = ["1y", "20y"], member_code = ["swap_cad_corra_short", "swap_cad_corra_long"] }
+overnightIndex = 'index_cad_corra'
+calendar = "can"
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[zero_eur_estr]
+category = "yieldcurve"
+swap_type = "overnight"
+cash_member_code = "index_eur_estr"
+swap_member_code = "swap_eur_estr"
+overnightIndex = 'index_eur_estr'
+calendar = "eur"
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[zero_gbp_sonia]
+category = "yieldcurve"
+swap_type = "overnight"
+cash_member_code = "index_gbp_sonia"
+swap_member_code = "swap_gbp_sonia"
+overnightIndex = 'index_gbp_sonia'
+calendar = "gbr"
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[zero_jpy_tona]
+category = "yieldcurve"
+swap_type = "overnight"
+cash_member_code = "index_jpy_tona"
+swap_member_code = "swap_jpy_tona"
+overnightIndex = 'index_jpy_tona'
+calendar = "jpn"
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[zero_krw_kofr]
+category = "yieldcurve"
+swap_type = "overnight"
+cash_member_code = "index_krw_kofr"
+swap_member_code = "swap_krw_kofr"
+overnightIndex = 'index_krw_kofr'
+calendar = "kor"
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+externalDiscount = 'zero_krw_cd'
+
+
+[zero_krw_cd]
+category = "yieldcurve"
+swap_type = "ibor"
+cash_member_code = "index_krw_cd"
+swap_member_code = "swap_krw_cd"
+iborIndex = 'index_krw_cd'
+calendar = "kor"
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[zero_ktb]
+category = "zerocurve"
+calendar = "kor"
+dayCounter = "Actual/365 (Fixed) day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+# ----------------------------------------------------
+[zero_audusd]
+category = "basiscurve"
+swap_type = "overnight_overnight"
+fxspot_code = "fxspot_audusd_on"
+fxfwd_member_code = "fxfwd_audusd"
+swap_member_code = "ccs_audusd_aonia_sofr"
+basecurrency_index = 'index_usd_sofr'
+basecurrency_indexcurve = 'zero_usd_sofr'
+quotecurrency_index = 'index_aud_aonia'
+quotecurrency_indexcurve = 'zero_aud_aonia'
+calendar = "usa-nyse,aus"
+isReverseFx = true
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[fxfwd_audusd]
+category = "fxfwd"
+helper_class = "FxForwardRateHelper"
+base_currency = "aud"
+quote_currency = "usd"
+fixingDays = 1
+calendar = "usa-nyse,aus"
+convention = 1
+endOfMonth = false
+collateralCurve = "zero_usd"
+
+
+[ccs_audusd_aonia_sofr]
+category = "ccs"
+helper_class = "CCOvernightOvernightSwapMarketConvention"
+fixingdays = 2
+calendar = "usa-nyse,aus"
+bdc = "mf"
+endofmonth = false
+pillarchoice = "lastrelevantdate"
+
+baseleg_currency  ="usd"
+baseleg_fixingdays  = 0
+baseleg_calendar  = "usa-nyse,aus"
+baseleg_frequency = "3m"
+baseleg_bdc = "mf"
+baseleg_endofmonth = false
+baseleg_paymentlag = 2
+baseleg_paymentcalendar = "usa-nyse,aus"
+baseleg_paymentbdc = "mf"
+baseleg_telescopicvaluedates = false
+baseleg_averagingmethod = "compound"
+baseleg_notionalpaymentlag = 0
+
+quoteleg_currency  ="aud"
+quoteleg_fixingdays  = 0
+quoteleg_calendar  = "usa-nyse,aus" 
+quoteleg_frequency = "3m"
+quoteleg_bdc = "mf"
+quoteleg_endofmonth = false
+quoteleg_paymentlag = 2
+quoteleg_paymentcalendar = "usa-nyse,aus"
+quoteleg_paymentbdc = "mf"
+quoteleg_telescopicvaluedates = false
+quoteleg_averagingmethod = "compound"
+quoteleg_notionalpaymentlag = 0
+
+# ----------------------------------------------------
+
+# ----------------------------------------------------
+[zero_usdcad]
+category = "basiscurve"
+swap_type = "overnight_overnight"
+fxspot_code = "fxspot_usdcad_on"
+fxfwd_member_code = "fxfwd_usdcad"
+swap_member_code = "ccs_usdcad_sofr_corra"
+basecurrency_index = 'index_usd_sofr'
+basecurrency_indexcurve = 'zero_usd_sofr'
+quotecurrency_index = 'index_cad_corra'
+quotecurrency_indexcurve = 'zero_cad_corra'
+calendar = "usa-nyse,can"
+isReverseFx = false
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[fxfwd_usdcad]
+category = "fxfwd"
+helper_class = "FxForwardRateHelper"
+base_currency = "usd"
+quote_currency = "cad"
+fixingDays = 1
+calendar = "usa-nyse,can"
+convention = 1
+endOfMonth = false
+collateralCurve = "zero_usd"
+
+
+[ccs_usdcad_sofr_corra]
+category = "ccs"
+helper_class = "CCOvernightOvernightSwapMarketConvention"
+fixingdays = 2
+calendar = "usa-nyse,can"
+bdc = "mf"
+endofmonth = false
+pillarchoice = "lastrelevantdate"
+
+baseleg_currency  ="usd"
+baseleg_fixingdays  = 0
+baseleg_calendar  = "usa-nyse,can"
+baseleg_frequency = "3m"
+baseleg_bdc = "mf"
+baseleg_endofmonth = false
+baseleg_paymentlag = 2
+baseleg_paymentcalendar = "usa-nyse,can"
+baseleg_paymentbdc = "mf"
+baseleg_telescopicvaluedates = false
+baseleg_averagingmethod = "compound"
+baseleg_notionalpaymentlag = 0
+
+quoteleg_currency  ="cad"
+quoteleg_fixingdays  = 0
+quoteleg_calendar  = "usa-nyse,can" 
+quoteleg_frequency = "3m"
+quoteleg_bdc = "mf"
+quoteleg_endofmonth = false
+quoteleg_paymentlag = 2
+quoteleg_paymentcalendar = "usa-nyse,can"
+quoteleg_paymentbdc = "mf"
+quoteleg_telescopicvaluedates = false
+quoteleg_averagingmethod = "compound"
+quoteleg_notionalpaymentlag = 0
+
+# ----------------------------------------------------
+[zero_eurusd]
+category = "basiscurve"
+swap_type = "overnight_overnight"
+fxspot_code = "fxspot_eurusd_on"
+fxfwd_member_code = "fxfwd_eurusd"
+swap_member_code = "ccs_eurusd_sofr_estr"
+basecurrency_index = 'index_usd_sofr'
+basecurrency_indexcurve = 'zero_usd_sofr'
+quotecurrency_index = 'index_eur_estr'
+quotecurrency_indexcurve = 'zero_eur_estr'
+calendar = "usa-nyse,eur"
+isReverseFx = true
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[fxfwd_eurusd]
+category = "fxfwd"
+helper_class = "FxForwardRateHelper"
+base_currency = "eur"
+quote_currency = "usd"
+fixingDays = 2
+calendar = "usa-nyse,eur"
+convention = 1
+endOfMonth = false
+collateralCurve = "zero_usd"
+
+
+[ccs_eurusd_sofr_estr]
+category = "ccs"
+helper_class = "CCOvernightOvernightSwapMarketConvention"
+fixingdays = 2
+calendar = "usa-nyse,eur"
+bdc = "mf"
+endofmonth = false
+pillarchoice = "lastrelevantdate"
+
+baseleg_currency  ="usd"
+baseleg_fixingdays  = 0
+baseleg_calendar  = "usa-nyse,eur"
+baseleg_frequency = "3m"
+baseleg_bdc = "mf"
+baseleg_endofmonth = false
+baseleg_paymentlag = 2
+baseleg_paymentcalendar = "usa-nyse,eur"
+baseleg_paymentbdc = "mf"
+baseleg_telescopicvaluedates = false
+baseleg_averagingmethod = "compound"
+baseleg_notionalpaymentlag = 0
+
+quoteleg_currency  ="eur"
+quoteleg_fixingdays  = 0
+quoteleg_calendar  = "usa-nyse,eur" 
+quoteleg_frequency = "3m"
+quoteleg_bdc = "mf"
+quoteleg_endofmonth = false
+quoteleg_paymentlag = 2
+quoteleg_paymentcalendar = "usa-nyse,eur"
+quoteleg_paymentbdc = "mf"
+quoteleg_telescopicvaluedates = false
+quoteleg_averagingmethod = "compound"
+quoteleg_notionalpaymentlag = 0
+
+# ----------------------------------------------------
+
+[zero_gbpusd]
+category = "basiscurve"
+swap_type = "overnight_overnight"
+fxspot_code = "fxspot_gbpusd_on"
+fxfwd_member_code = "fxfwd_gbpusd"
+swap_member_code = "ccs_gbpusd_sofr_sonia"
+basecurrency_index = 'index_usd_sofr'
+basecurrency_indexcurve = 'zero_usd_sofr'
+quotecurrency_index = 'index_gbp_sonia'
+quotecurrency_indexcurve = 'zero_gbp_sonia'
+calendar = "usa-nyse,gbr"
+isReverseFx = true
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[fxfwd_gbpusd]
+category = "fxfwd"
+helper_class = "FxForwardRateHelper"
+base_currency = "gbp"
+quote_currency = "usd"
+fixingDays = 2
+calendar = "usa-nyse,gbr"
+convention = 1
+endOfMonth = false
+collateralCurve = "zero_usd"
+
+
+[ccs_gbpusd_sofr_sonia]
+category = "ccs"
+helper_class = "CCOvernightOvernightSwapMarketConvention"
+fixingdays = 2
+calendar = "usa-nyse,gbr"
+bdc = "mf"
+endofmonth = false
+pillarchoice = "lastrelevantdate"
+
+baseleg_currency  ="usd"
+baseleg_fixingdays  = 0
+baseleg_calendar  = "usa-nyse,gbr"
+baseleg_frequency = "3m"
+baseleg_bdc = "mf"
+baseleg_endofmonth = false
+baseleg_paymentlag = 2
+baseleg_paymentcalendar = "usa-nyse,gbr"
+baseleg_paymentbdc = "mf"
+baseleg_telescopicvaluedates = false
+baseleg_averagingmethod = "compound"
+baseleg_notionalpaymentlag = 0
+
+quoteleg_currency  ="gbp"
+quoteleg_fixingdays  = 0
+quoteleg_calendar  = "usa-nyse,gbr" 
+quoteleg_frequency = "3m"
+quoteleg_bdc = "mf"
+quoteleg_endofmonth = false
+quoteleg_paymentlag = 2
+quoteleg_paymentcalendar = "usa-nyse,gbr"
+quoteleg_paymentbdc = "mf"
+quoteleg_telescopicvaluedates = false
+quoteleg_averagingmethod = "compound"
+quoteleg_notionalpaymentlag = 0
+
+# ----------------------------------------------------
+
+[zero_usdjpy]
+category = "basiscurve"
+swap_type = "overnight_overnight"
+fxspot_code = "fxspot_usdjpy_on"
+fxfwd_member_code = "fxfwd_usdjpy"
+swap_member_code = "ccs_usdjpy_sofr_tona"
+basecurrency_index = 'index_usd_sofr'
+basecurrency_indexcurve = 'zero_usd_sofr'
+quotecurrency_index = 'index_jpy_tona'
+quotecurrency_indexcurve = 'zero_jpy_tona'
+calendar = "usa-nyse,jpn"
+isReverseFx = false
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[fxfwd_usdjpy]
+category = "fxfwd"
+helper_class = "FxForwardRateHelper"
+base_currency = "usd"
+quote_currency = "jpy"
+fixingDays = 2
+calendar = "usa-nyse,jpn"
+convention = 1
+endOfMonth = false
+collateralCurve = "zero_usd"
+
+
+[ccs_usdjpy_sofr_tona]
+category = "ccs"
+helper_class = "CCOvernightOvernightSwapMarketConvention"
+fixingdays = 2
+calendar = "usa-nyse,jpn"
+bdc = "mf"
+endofmonth = false
+pillarchoice = "lastrelevantdate"
+
+baseleg_currency  ="usd"
+baseleg_fixingdays  = 0
+baseleg_calendar  = "usa-nyse,jpn"
+baseleg_frequency = "3m"
+baseleg_bdc = "mf"
+baseleg_endofmonth = false
+baseleg_paymentlag = 2
+baseleg_paymentcalendar = "usa-nyse,jpn"
+baseleg_paymentbdc = "mf"
+baseleg_telescopicvaluedates = false
+baseleg_averagingmethod = "compound"
+baseleg_notionalpaymentlag = 0
+
+quoteleg_currency  ="gbp"
+quoteleg_fixingdays  = 0
+quoteleg_calendar  = "usa-nyse,jpn" 
+quoteleg_frequency = "3m"
+quoteleg_bdc = "mf"
+quoteleg_endofmonth = false
+quoteleg_paymentlag = 2
+quoteleg_paymentcalendar = "usa-nyse,jpn"
+quoteleg_paymentbdc = "mf"
+quoteleg_telescopicvaluedates = false
+quoteleg_averagingmethod = "compound"
+quoteleg_notionalpaymentlag = 0
+
+# ----------------------------------------------------
+
+[crs_usdkrw_sofr_fixed]
+category = "crs"
+familyname = "crs_usdkrw_sofr_fixed"
+swap_type = "fixed_overnight"
+fxfwd_member_code = "usdkrw_fxfwd"
+swap_member_code = "usdkrwcrs_basis"
+domestic_currency = "krw"
+foreign_currency = "usd"
+settlementDays = 0
+dayCounter = "Actual/365 (Fixed) day counter"
+interpolationType = "linear"
+traits = "zero"
+
+[bond_krw_ktb]
+category = "bond"
+bond_type = "fixed"
+currency = "krw"
+fixedLegTenor = "3m"
+fixedLegConvention = 1
+fixedLegDayCounter = "Actual/365 (Fixed) day counter"
+settlementDays = 0
+calendar = "kor"
+
+
+[crs_usdkrw_sofr_cd]
+category = "crs_basis"
+ql_helper_class = "ConstNotionalCrossCurrencyBasisSwapRateHelper"
+fixingDays = 1
+calendar = "usa"
+convention = 1
+endOfMonth = false
+baseCurrencyIndex = "libor"
+quoteCurrencyIndex = "krwcd"
+isFxBaseCurrencyCollateralCurrency = true
+collateralCurve = "irs_usd_sofr"
+isBasisOnFxBaseCurrencyLeg = false
+
+
+# fxspot
+
+[fxspot_usdkrw_on]
+category = "fxspot"
+currencypair = "usdkrw"
+base_currency = "usd"
+calendar = "usa-nyse,kor"
+collateral_currency = "krw"
+settlementDays = 2
+convention = 1
+
+[fxspot_audusd_on]
+category = "fxspot"
+currencypair = "audusd"
+base_currency = "aud"
+collateral_currency = "usd"
+calendar = "usa-nyse,aus"
+settlementDays = 2
+convention = 1
+
+[fxspot_usdcad_on]
+category = "fxspot"
+currencypair = "usdcad"
+base_currency = "usd"
+calendar = "usa-nyse,can"
+collateral_currency = "cad"
+settlementDays = 1
+
+[fxspot_eurusd_on]
+category = "fxspot"
+currencypair = "eurusd"
+base_currency = "eur"
+calendar = "usa-nyse,eur"
+collateral_currency = "usd"
+settlementDays = 2
+
+[fxspot_gbpusd_on]
+category = "fxspot"
+currencypair = "gbpusd"
+base_currency = "gbp"
+calendar = "usa-nyse,gbr"
+collateral_currency = "usd"
+settlementDays = 2
+
+[fxspot_usdjpy_on]
+category = "fxspot"
+currencypair = "usdjpy"
+base_currency = "usd"
+calendar = "usa-nyse,jpn"
+collateral_currency = "jpy"
+settlementDays = 2
