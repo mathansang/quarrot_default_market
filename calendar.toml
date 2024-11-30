@@ -1,0 +1,15 @@
+[kor]
+baseCalendar='SouthKorea'
+removedDates=[
+    '2039-05-02',
+    '2040-05-01',
+    '2051-05-01',
+    '2052-05-01',
+    '2053-05-01','2053-05-05','2053-08-01'
+]
+
+[usa]
+baseCalendar='UnitedStates'
+
+[usa-nyse]
+baseCalendar='UnitedStates-NYSE'

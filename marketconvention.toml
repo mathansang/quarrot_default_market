@@ -1,31 +1,31 @@
-[index_krw_cms10y]
+[index_krw_cms]
 category = "index"
 index_type = "swap"
-familyname = 'irs_krw_cd'
-tenor = '10y'
+familyname = 'krw_cms'
+underlyingSwap = 'swap_krw_cd'
+settlementDays = 1 # fixingDays
 
-[index_krw_cms2y]
-category = "index"
-index_type = "swap"
-familyname = 'irs_krw_cd'
-tenor = '2y'
 
-[index_krw_cd3m]
+[index_krw_cmt]
 category = "index"
-index_type = "ibor"
-familyname = 'index_krw_cd'
-tenor = '3m'
+index_type = "bond"
+familyname = 'krw_cmt'
+underlyingBond = 'bond_krw_ktb'
+currency = "krw"
+settlementDays = 1
+
 
 [index_krw_cd]
 category = "index"
 index_type = "ibor"
-familyname = 'index_krw_cd'
+familyname = 'krw_cd'
 currency = "krw"
 settlementDays = 1
 calendar = "kor"
 dayCounter = "Actual/365 (Fixed) day counter"
 convention = 1
 endOfMonth = false
+
 
 [index_krw_kofr]
 category = "index"
@@ -35,6 +35,7 @@ settlementDays = 1
 currency = "krw"
 calendar = "kor"
 dayCounter = "Actual/365 (Fixed) day counter"
+
 
 [index_usd_sofr]
 category = "index"
@@ -100,6 +101,13 @@ calendar = "jpn"
 dayCounter = "Actual/365 (Fixed) day counter"
 
 
+[index_krw_swaptionvol]
+category = "index"
+index_type = "swaptionvol"
+underlyingSwap = 'swap_krw_cd'
+
+
+# swap
 [swap_krw_cd]
 category = "swap"
 swap_type = "ibor"
@@ -111,6 +119,51 @@ settlementDays = 1
 calendar = "kor"
 iborIndex = "index_krw_cd"
 iborIndexTenor = "3m"
+
+
+[swap_krw_cms]
+category = "swap"
+swap_type = "fixedfloat"
+currency = "krw"
+settlementDays = 1
+calendar = "kor"
+
+fixedFrequency = "Quarterly"
+fixedConvention = 1
+fixedDayCounter = "Actual/365 (Fixed) day counter"
+
+floatFrequency = "Quarterly"
+floatConvention = 1
+floatDayCounter = "Actual/365 (Fixed) day counter"
+
+floatIndex = "index_krw_cms"
+floatIndexFixingDays = 1
+floatIndexTenor = "10y"
+floatResetTenor = "3m"
+
+
+
+[swap_krw_cmt]
+category = "swap"
+swap_type = "fixedfloat"
+currency = "krw"
+settlementDays = 1
+calendar = "kor"
+
+fixedFrequency = "Quarterly"
+fixedConvention = 1
+fixedDayCounter = "Actual/365 (Fixed) day counter"
+
+floatFrequency = "Quarterly"
+floatConvention = 1
+floatDayCounter = "Actual/365 (Fixed) day counter"
+
+floatIndex = "index_krw_cmt"
+floatIndexFixingDays = 1
+floatIndexTenor = "10y"
+floatResetTenor = "3m"
+
+
 
 [swap_krw_kofr]
 category = "swap"
@@ -321,18 +374,9 @@ extrapolationType = 'zeroflat'
 traits = "zero"
 
 
-[zero_ktb]
-category = "zerocurve"
-calendar = "kor"
-dayCounter = "Actual/365 (Fixed) day counter"
-interpolationType = "linear"
-extrapolationType = 'zeroflat'
-traits = "zero"
-
-
 # ----------------------------------------------------
 [zero_audusd]
-category = "basiscurve"
+category = "ccbasiscurve"
 swap_type = "overnight_overnight"
 fxspot_code = "fxspot_audusd_on"
 fxfwd_member_code = "fxfwd_audusd"
@@ -344,6 +388,7 @@ quotecurrency_indexcurve = 'zero_aud_aonia'
 calendar = "usa-nyse,aus"
 isReverseFx = true
 dayCounter = "Actual/360 day counter"
+
 interpolationType = "linear"
 extrapolationType = 'zeroflat'
 traits = "zero"
@@ -362,7 +407,7 @@ collateralCurve = "zero_usd"
 
 
 [ccs_audusd_aonia_sofr]
-category = "ccs"
+category = "ccbasisswap"
 helper_class = "CCOvernightOvernightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,aus"
@@ -400,7 +445,7 @@ quoteleg_notionalpaymentlag = 0
 
 # ----------------------------------------------------
 [zero_usdcad]
-category = "basiscurve"
+category = "ccbasiscurve"
 swap_type = "overnight_overnight"
 fxspot_code = "fxspot_usdcad_on"
 fxfwd_member_code = "fxfwd_usdcad"
@@ -430,7 +475,7 @@ collateralCurve = "zero_usd"
 
 
 [ccs_usdcad_sofr_corra]
-category = "ccs"
+category = "ccbasisswap"
 helper_class = "CCOvernightOvernightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,can"
@@ -466,7 +511,7 @@ quoteleg_notionalpaymentlag = 0
 
 # ----------------------------------------------------
 [zero_eurusd]
-category = "basiscurve"
+category = "ccbasiscurve"
 swap_type = "overnight_overnight"
 fxspot_code = "fxspot_eurusd_on"
 fxfwd_member_code = "fxfwd_eurusd"
@@ -496,7 +541,7 @@ collateralCurve = "zero_usd"
 
 
 [ccs_eurusd_sofr_estr]
-category = "ccs"
+category = "ccbasisswap"
 helper_class = "CCOvernightOvernightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,eur"
@@ -533,7 +578,7 @@ quoteleg_notionalpaymentlag = 0
 # ----------------------------------------------------
 
 [zero_gbpusd]
-category = "basiscurve"
+category = "ccbasiscurve"
 swap_type = "overnight_overnight"
 fxspot_code = "fxspot_gbpusd_on"
 fxfwd_member_code = "fxfwd_gbpusd"
@@ -563,7 +608,7 @@ collateralCurve = "zero_usd"
 
 
 [ccs_gbpusd_sofr_sonia]
-category = "ccs"
+category = "ccbasisswap"
 helper_class = "CCOvernightOvernightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,gbr"
@@ -600,7 +645,7 @@ quoteleg_notionalpaymentlag = 0
 # ----------------------------------------------------
 
 [zero_usdjpy]
-category = "basiscurve"
+category = "ccbasiscurve"
 swap_type = "overnight_overnight"
 fxspot_code = "fxspot_usdjpy_on"
 fxfwd_member_code = "fxfwd_usdjpy"
@@ -630,7 +675,7 @@ collateralCurve = "zero_usd"
 
 
 [ccs_usdjpy_sofr_tona]
-category = "ccs"
+category = "ccbasisswap"
 helper_class = "CCOvernightOvernightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,jpn"
@@ -651,7 +696,7 @@ baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
 
-quoteleg_currency  ="gbp"
+quoteleg_currency  ="jpy"
 quoteleg_fixingdays  = 0
 quoteleg_calendar  = "usa-nyse,jpn" 
 quoteleg_frequency = "3m"
@@ -666,18 +711,68 @@ quoteleg_notionalpaymentlag = 0
 
 # ----------------------------------------------------
 
-[crs_usdkrw_sofr_fixed]
-category = "crs"
-familyname = "crs_usdkrw_sofr_fixed"
+[zero_usdkrw]
+category = "ccfloatcurve"
 swap_type = "fixed_overnight"
-fxfwd_member_code = "usdkrw_fxfwd"
-swap_member_code = "usdkrwcrs_basis"
-domestic_currency = "krw"
-foreign_currency = "usd"
-settlementDays = 0
-dayCounter = "Actual/365 (Fixed) day counter"
+fxspot_code = "fxspot_usdkrw_on"
+fxfwd_member_code = "fxfwd_usdkrw"
+swap_member_code = "ccs_usdkrw_sofr_fixed"
+basecurrency_index = 'index_usd_sofr'
+basecurrency_indexcurve = 'zero_usd_sofr'
+calendar = "usa-nyse,kor"
+isReverseFx = false
+dayCounter = "Actual/360 day counter"
 interpolationType = "linear"
+extrapolationType = 'zeroflat'
 traits = "zero"
+
+
+[fxfwd_usdkrw]
+category = "fxfwd"
+helper_class = "FxForwardRateHelper"
+base_currency = "usd"
+quote_currency = "krw"
+fixingDays = 2
+calendar = "usa-nyse,kor"
+convention = 1
+endOfMonth = false
+collateralCurve = "zero_usd"
+
+
+[ccs_usdkrw_sofr_fixed]
+category = "ccfloatswap"
+helper_class = "CCFixedOverightSwapMarketConvention"
+fixingdays = 2
+calendar = "usa-nyse,kor"
+bdc = "mf"
+endofmonth = false
+pillarchoice = "lastrelevantdate"
+
+baseleg_currency  ="usd"
+baseleg_fixingdays  = 0
+baseleg_calendar  = "usa-nyse,kor"
+baseleg_frequency = "3m"
+baseleg_bdc = "mf"
+baseleg_endofmonth = false
+baseleg_paymentlag = 2
+baseleg_paymentcalendar = "usa-nyse,kor"
+baseleg_paymentbdc = "mf"
+baseleg_telescopicvaluedates = false
+baseleg_averagingmethod = "compound"
+baseleg_notionalpaymentlag = 0
+
+fixedleg_currency  ="krw"
+fixedleg_fixingdays  = 0
+fixedleg_calendar  = "usa-nyse,kor" 
+fixedleg_frequency = "3m"
+fixedleg_bdc = "mf"
+fixedleg_endofmonth = false
+fixedleg_paymentlag = 2
+fixedleg_paymentcalendar = "usa-nyse,kor"
+fixedleg_paymentbdc = "mf"
+fixedleg_notionalpaymentlag = 0
+fixedleg_daycounter = 'act/365'
+
 
 [bond_krw_ktb]
 category = "bond"
@@ -690,22 +785,7 @@ settlementDays = 0
 calendar = "kor"
 
 
-[crs_usdkrw_sofr_cd]
-category = "crs_basis"
-ql_helper_class = "ConstNotionalCrossCurrencyBasisSwapRateHelper"
-fixingDays = 1
-calendar = "usa"
-convention = 1
-endOfMonth = false
-baseCurrencyIndex = "libor"
-quoteCurrencyIndex = "krwcd"
-isFxBaseCurrencyCollateralCurrency = true
-collateralCurve = "irs_usd_sofr"
-isBasisOnFxBaseCurrencyLeg = false
-
-
 # fxspot
-
 [fxspot_usdkrw_on]
 category = "fxspot"
 currencypair = "usdkrw"

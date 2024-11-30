@@ -1,0 +1,15 @@
+type='interestRate'
+data_type='single'
+
+dayCounter = "actual365fixed"
+familyname = 'index_krw_cd'
+tenor='3M'
+
+
+[data]
+20241011=0.031
+20241012=0.032
+20241013=0.033
+20241014=0.034
+20241015=0.035
+20241016=0.036
