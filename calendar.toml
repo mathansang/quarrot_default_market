@@ -13,3 +13,42 @@ baseCalendar='UnitedStates'
 
 [usa-nyse]
 baseCalendar='UnitedStates-NYSE'
+
+[aus]
+baseCalendar='australia'
+removedDates=[
+    '2024-08-05',
+    '2025-08-05',
+    '2026-08-05',
+    '2027-08-05',
+    '2028-08-05',
+    '2029-08-05',
+    '2030-08-05',
+    '2031-08-05',
+    '2032-08-05',
+    '2033-08-05',
+    '2034-08-05',
+    '2035-08-05',
+    '2036-08-05',
+]
+
+[gbr]
+baseCalendar='germany'
+
+[can]
+baseCalendar='Canada'
+
+[eur]
+baseCalendar='target'
+
+[jpn]
+baseCalendar='Japan'
+
+[chn]
+baseCalendar='China'
+
+[ind]
+baseCalendar='India'
+
+[bra]
+baseCalendar='Brazil'

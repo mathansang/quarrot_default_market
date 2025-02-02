@@ -374,6 +374,16 @@ extrapolationType = 'zeroflat'
 traits = "zero"
 
 
+
+[defaultCurve]
+category = "yieldcurve"
+calendar = "kor"
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
+
+
 # ----------------------------------------------------
 [zero_audusd]
 category = "ccbasiscurve"
