@@ -27,6 +27,18 @@ convention = 1
 endOfMonth = false
 
 
+[index_eur_euribor]
+category = "index"
+index_type = "ibor"
+familyname = 'eur_euribor'
+currency = "eur"
+settlementDays = 2
+calendar = "eur"
+dayCounter = "30360"
+convention = 1
+endOfMonth = false
+
+
 [index_krw_kofr]
 category = "index"
 index_type = "overnight"
@@ -230,6 +242,34 @@ calendar = "eur"
 averagingMethod = 1
 
 
+# swap
+[swap_eur_euribor]
+category = "swap"
+swap_type = "ibor"
+currency = "eur"
+fixedFrequency = "Annual"
+fixedConvention = 1
+fixedDayCounter = "30360"
+settlementDays = 2
+calendar = "eur"
+iborIndex = "index_eur_euribor"
+iborIndexTenor = "6m"
+
+
+[swap_eur_euribor3m]
+category = "swap"
+swap_type = "ibor"
+currency = "eur"
+fixedFrequency = "Annual"
+fixedConvention = 1
+fixedDayCounter = "30360"
+settlementDays = 2
+calendar = "eur"
+iborIndex = "index_eur_euribor"
+iborIndexTenor = "3m"
+
+
+
 [swap_gbp_sonia]
 category = "swap"
 swap_type = "overnight"
@@ -318,6 +358,32 @@ calendar = "eur"
 dayCounter = "Actual/360 day counter"
 interpolationType = "linear"
 extrapolationType = 'zeroflat'
+traits = "zero"
+
+
+[zero_eur_euribor]
+category = "yieldcurve"
+swap_type = "ibor"
+cash_member_code = "index_eur_euribor"
+swap_member_code = "swap_eur_euribor"
+iborIndex = "index_eur_euribor"
+calendar = "eur"
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = "zeroflat"
+traits = "zero"
+
+
+[zero_eur_euribor3m]
+category = "yieldcurve"
+swap_type = "ibor"
+cash_member_code = "index_eur_euribor"
+swap_member_code = "swap_eur_euribor3m"
+iborIndex = "index_eur_euribor"
+calendar = "eur"
+dayCounter = "Actual/360 day counter"
+interpolationType = "linear"
+extrapolationType = "zeroflat"
 traits = "zero"
 
 
