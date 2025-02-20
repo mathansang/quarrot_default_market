@@ -439,12 +439,22 @@ interpolationType = "linear"
 extrapolationType = 'zeroflat'
 traits = "zero"
 
+[zero_krw_ktb]
+category = "bondcurve"
+bond_type = "fixed"
+# cash_member_code = "index_krw_cd"
+bond_member_code = "bond_krw_ktb"
+calendar = "kor"
+dayCounter = "Act365Fixed"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
 
 
 [defaultCurve]
 category = "yieldcurve"
 calendar = "kor"
-dayCounter = "Actual/360 day counter"
+dayCounter = "Act365Fixed"
 interpolationType = "linear"
 extrapolationType = 'zeroflat'
 traits = "zero"
@@ -854,10 +864,10 @@ fixedleg_daycounter = 'act/365'
 category = "bond"
 bond_type = "fixed"
 currency = "krw"
-fixedLegTenor = "3m"
-fixedLegConvention = 1
-fixedLegDayCounter = "Actual/365 (Fixed) day counter"
-settlementDays = 0
+frequency = '6m'
+convention = 'mf'
+dayCounter = "Act365Fixed"
+settlementDays = 1
 calendar = "kor"
 
 
