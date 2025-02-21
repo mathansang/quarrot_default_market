@@ -1,12 +1,9 @@
 type='interestRate'
-data_type='single'
+data_type='tenors'
 
-dayCounter = "actual365fixed"
-familyname = 'index_krw_cd'
-tenor='3M'
+index_name = 'index_krw_cd'
 
-
-[data]
+[3m]
 20241011=0.031
 20241012=0.032
 20241013=0.033

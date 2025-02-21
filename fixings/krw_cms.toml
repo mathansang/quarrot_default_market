@@ -1,6 +1,7 @@
 type='interestRate'
 data_type='family'
 
+index_name = 'index_krw_cms'
 
 [[data]]
 tenor=['3m', '20y']
