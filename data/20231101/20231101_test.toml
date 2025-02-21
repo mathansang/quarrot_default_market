@@ -96,7 +96,7 @@ quote = [0,-0.16535,-0.76025,-1.58665,-2.2765,-4.41175,-6.4732,-8.4573,-0.006287
 [zero_usdkrw]
 scale = 1
 tenor = ["ON","1W","1M","2M","3M","6M","9M","1Y","18M","2Y","3Y","4Y","5Y","6Y","7Y","9Y","10Y","12Y","15Y","20Y"]
-member_type = ["fxspot","fxfwd","fxfwd","fxfwd","fxfwd","fxfwd","fxfwd","fxfwd","ccbswap","ccbswap","ccbswap","ccbswap","ccbswap","ccbswap","ccbswap","ccbswap","ccbswap","ccbswap","ccbswap","ccbswap"]
+member_type = ["fxspot","fxfwd","fxfwd","fxfwd","fxfwd","fxfwd","fxfwd","fxfwd","ccfswap"]
 quote = [0,-0.45,-2.2,-4.8,-7.35,-14.4,-20.95,-27.5,0.0326,0.0329,0.0334,0.0336,0.03385,0.03395,0.034,0.0339,0.0339,0.0342,0.034,0.0336]
 
 
