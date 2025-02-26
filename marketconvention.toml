@@ -437,7 +437,7 @@ dayCounter = "Actual/360 day counter"
 interpolationType = "linear"
 extrapolationType = 'zeroflat'
 traits = "zero"
-interpolateCurveMember = true
+interpolateCurveMember = false # not implemented yet for true
 
 
 [zero_krw_ktb]
