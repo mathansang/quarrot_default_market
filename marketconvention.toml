@@ -432,12 +432,13 @@ category = "yieldcurve"
 swap_type = "ibor"
 cash_member_code = "index_krw_cd"
 swap_member_code = "swap_krw_cd"
-iborIndex = 'index_krw_cd'
 calendar = "kor"
 dayCounter = "Actual/360 day counter"
 interpolationType = "linear"
 extrapolationType = 'zeroflat'
 traits = "zero"
+interpolateCurveMember = true
+
 
 [zero_krw_ktb]
 category = "bondcurve"
@@ -451,13 +452,13 @@ extrapolationType = 'zeroflat'
 traits = "zero"
 
 
-[defaultCurve]
-category = "yieldcurve"
-calendar = "kor"
-dayCounter = "Act365Fixed"
-interpolationType = "linear"
-extrapolationType = 'zeroflat'
-traits = "zero"
+# [defaultCurve]
+# category = "yieldcurve"
+# calendar = "kor"
+# dayCounter = "Act365Fixed"
+# interpolationType = "linear"
+# extrapolationType = 'zeroflat'
+# traits = "zero"
 
 
 # ----------------------------------------------------
@@ -467,9 +468,7 @@ swap_type = "overnight_overnight"
 fxspot_code = "fxspot_audusd_on"
 fxfwd_member_code = "fxfwd_audusd"
 swap_member_code = "ccs_audusd_aonia_sofr"
-basecurrency_index = 'index_usd_sofr'
 basecurrency_indexcurve = 'zero_usd_sofr'
-quotecurrency_index = 'index_aud_aonia'
 quotecurrency_indexcurve = 'zero_aud_aonia'
 calendar = "usa-nyse,aus"
 isReverseFx = true
@@ -513,6 +512,7 @@ baseleg_paymentbdc = "mf"
 baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
+baseleg_index = 'index_usd_sofr'
 
 quoteleg_currency  ="aud"
 quoteleg_fixingdays  = 0
@@ -526,6 +526,7 @@ quoteleg_paymentbdc = "mf"
 quoteleg_telescopicvaluedates = false
 quoteleg_averagingmethod = "compound"
 quoteleg_notionalpaymentlag = 0
+quoteleg_index = 'index_aud_aonia'
 
 # ----------------------------------------------------
 
@@ -536,9 +537,7 @@ swap_type = "overnight_overnight"
 fxspot_code = "fxspot_usdcad_on"
 fxfwd_member_code = "fxfwd_usdcad"
 swap_member_code = "ccs_usdcad_sofr_corra"
-basecurrency_index = 'index_usd_sofr'
 basecurrency_indexcurve = 'zero_usd_sofr'
-quotecurrency_index = 'index_cad_corra'
 quotecurrency_indexcurve = 'zero_cad_corra'
 calendar = "usa-nyse,can"
 isReverseFx = false
@@ -581,6 +580,7 @@ baseleg_paymentbdc = "mf"
 baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
+baseleg_index = 'index_usd_sofr'
 
 quoteleg_currency  ="cad"
 quoteleg_fixingdays  = 0
@@ -594,6 +594,7 @@ quoteleg_paymentbdc = "mf"
 quoteleg_telescopicvaluedates = false
 quoteleg_averagingmethod = "compound"
 quoteleg_notionalpaymentlag = 0
+quoteleg_index = 'index_cad_corra'
 
 # ----------------------------------------------------
 [zero_eurusd]
@@ -602,9 +603,7 @@ swap_type = "overnight_overnight"
 fxspot_code = "fxspot_eurusd_on"
 fxfwd_member_code = "fxfwd_eurusd"
 swap_member_code = "ccs_eurusd_sofr_estr"
-basecurrency_index = 'index_usd_sofr'
 basecurrency_indexcurve = 'zero_usd_sofr'
-quotecurrency_index = 'index_eur_estr'
 quotecurrency_indexcurve = 'zero_eur_estr'
 calendar = "usa-nyse,eur"
 isReverseFx = true
@@ -647,7 +646,7 @@ baseleg_paymentbdc = "mf"
 baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
-
+baseleg_index = 'index_usd_sofr'
 quoteleg_currency  ="eur"
 quoteleg_fixingdays  = 0
 quoteleg_calendar  = "usa-nyse,eur" 
@@ -660,7 +659,7 @@ quoteleg_paymentbdc = "mf"
 quoteleg_telescopicvaluedates = false
 quoteleg_averagingmethod = "compound"
 quoteleg_notionalpaymentlag = 0
-
+quoteleg_index = 'index_eur_estr'
 # ----------------------------------------------------
 
 [zero_gbpusd]
@@ -669,9 +668,7 @@ swap_type = "overnight_overnight"
 fxspot_code = "fxspot_gbpusd_on"
 fxfwd_member_code = "fxfwd_gbpusd"
 swap_member_code = "ccs_gbpusd_sofr_sonia"
-basecurrency_index = 'index_usd_sofr'
 basecurrency_indexcurve = 'zero_usd_sofr'
-quotecurrency_index = 'index_gbp_sonia'
 quotecurrency_indexcurve = 'zero_gbp_sonia'
 calendar = "usa-nyse,gbr"
 isReverseFx = true
@@ -714,6 +711,7 @@ baseleg_paymentbdc = "mf"
 baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
+baseleg_index = 'index_usd_sofr'
 
 quoteleg_currency  ="gbp"
 quoteleg_fixingdays  = 0
@@ -727,6 +725,7 @@ quoteleg_paymentbdc = "mf"
 quoteleg_telescopicvaluedates = false
 quoteleg_averagingmethod = "compound"
 quoteleg_notionalpaymentlag = 0
+quoteleg_index = 'index_gbp_sonia'
 
 # ----------------------------------------------------
 
@@ -736,9 +735,7 @@ swap_type = "overnight_overnight"
 fxspot_code = "fxspot_usdjpy_on"
 fxfwd_member_code = "fxfwd_usdjpy"
 swap_member_code = "ccs_usdjpy_sofr_tona"
-basecurrency_index = 'index_usd_sofr'
 basecurrency_indexcurve = 'zero_usd_sofr'
-quotecurrency_index = 'index_jpy_tona'
 quotecurrency_indexcurve = 'zero_jpy_tona'
 calendar = "usa-nyse,jpn"
 isReverseFx = false
@@ -781,6 +778,7 @@ baseleg_paymentbdc = "mf"
 baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
+baseleg_index = 'index_usd_sofr'
 
 quoteleg_currency  ="jpy"
 quoteleg_fixingdays  = 0
@@ -794,6 +792,7 @@ quoteleg_paymentbdc = "mf"
 quoteleg_telescopicvaluedates = false
 quoteleg_averagingmethod = "compound"
 quoteleg_notionalpaymentlag = 0
+quoteleg_index = 'index_jpy_tona'
 
 # ----------------------------------------------------
 
@@ -803,7 +802,6 @@ swap_type = "fixed_overnight"
 fxspot_code = "fxspot_usdkrw_on"
 fxfwd_member_code = "fxfwd_usdkrw"
 swap_member_code = "ccs_usdkrw_sofr_fixed"
-basecurrency_index = 'index_usd_sofr'
 basecurrency_indexcurve = 'zero_usd_sofr'
 calendar = "usa-nyse,kor"
 isReverseFx = false
@@ -846,6 +844,7 @@ baseleg_paymentbdc = "mf"
 baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
+baseleg_index = 'index_usd_sofr'
 
 fixedleg_currency  ="krw"
 fixedleg_fixingdays  = 0
@@ -863,11 +862,11 @@ fixedleg_daycounter = 'act/365'
 [bond_krw_ktb]
 category = "bond"
 bond_type = "fixed"
+settlementDays = 1
 currency = "krw"
 frequency = '6m'
 convention = 'mf'
 dayCounter = "Act365Fixed"
-settlementDays = 1
 calendar = "kor"
 
 
