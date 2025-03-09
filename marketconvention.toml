@@ -143,15 +143,21 @@ calendar = "kor"
 fixedFrequency = "Quarterly"
 fixedConvention = 1
 fixedDayCounter = "Actual/365 (Fixed) day counter"
+fixedEndofmonth = false
+fixedCalendar = "kor"
+fixedCurrency = "krw"
 
 floatFrequency = "Quarterly"
 floatConvention = 1
-floatDayCounter = "Actual/365 (Fixed) day counter"
+floatEndofmonth = false
+floatCalendar = "kor"
+floatIsInArrears = false
+floatCurrency = "krw"
 
 floatIndex = "index_krw_cms"
-floatIndexFixingDays = 1
 floatIndexTenor = "10y"
-floatResetTenor = "3m"
+floatIndexFixingDays = 1
+floatResetFrequency = "3m"
 
 
 
@@ -165,16 +171,50 @@ calendar = "kor"
 fixedFrequency = "Quarterly"
 fixedConvention = 1
 fixedDayCounter = "Actual/365 (Fixed) day counter"
+fixedEndofmonth = false
+fixedCalendar = "kor"
+fixedCurrency = "krw"
 
 floatFrequency = "Quarterly"
 floatConvention = 1
-floatDayCounter = "Actual/365 (Fixed) day counter"
+floatEndofmonth = false
+floatCalendar = "kor"
+floatIsInArrears = false
+floatCurrency = "krw"
 
-floatIndex = "index_krw_cmt"
-floatIndexFixingDays = 1
+floatIndex = "index_krw_cms"
 floatIndexTenor = "10y"
-floatResetTenor = "3m"
+floatIndexFixingDays = 1
+floatResetFrequency = "3m"
 
+
+[swap_default_general]
+category = "swap"
+swap_type = "general"
+currency = "krw"
+settlementDays = 1
+calendar = "kor"
+
+leg1Type ="fixed"
+leg1Frequency = "Quarterly"
+leg1Convention = 1
+leg1DayCounter = "Actual/365 (Fixed) day counter"
+leg1Endofmonth = false
+leg1Calendar = "kor"
+leg1Currency = "krw"
+
+leg2Type ="float"
+leg2Frequency = "Quarterly"
+leg2Convention = 1
+leg2Endofmonth = false
+leg2Calendar = "kor"
+leg2IsInArrears = false
+leg2Currency = "krw"
+
+leg2Index = "index_krw_cd"
+leg2IndexTenor = "3m"
+leg2IndexFixingDays = 1
+leg2ResetFrequency = "3m"
 
 
 [swap_krw_kofr]
@@ -452,13 +492,13 @@ extrapolationType = 'zeroflat'
 traits = "zero"
 
 
-# [defaultCurve]
-# category = "yieldcurve"
-# calendar = "kor"
-# dayCounter = "Act365Fixed"
-# interpolationType = "linear"
-# extrapolationType = 'zeroflat'
-# traits = "zero"
+[defaultCurve]
+category = "yieldcurve"
+calendar = "kor"
+dayCounter = "Act365Fixed"
+interpolationType = "linear"
+extrapolationType = 'zeroflat'
+traits = "zero"
 
 
 # ----------------------------------------------------
@@ -825,6 +865,7 @@ collateralCurve = "zero_usd"
 
 [ccs_usdkrw_sofr_fixed]
 category = "ccfloatswap"
+swap_type = "overnight"
 helper_class = "CCFixedOverightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,kor"
