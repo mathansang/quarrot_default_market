@@ -553,6 +553,7 @@ baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
 baseleg_index = 'index_usd_sofr'
+baseleg_swap = 'swap_usd_sofr'
 
 quoteleg_currency  ="aud"
 quoteleg_fixingdays  = 0
@@ -567,6 +568,7 @@ quoteleg_telescopicvaluedates = false
 quoteleg_averagingmethod = "compound"
 quoteleg_notionalpaymentlag = 0
 quoteleg_index = 'index_aud_aonia'
+quoteleg_swap = 'swap_aud_aonia'
 
 # ----------------------------------------------------
 
@@ -621,6 +623,7 @@ baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
 baseleg_index = 'index_usd_sofr'
+baseleg_swap = 'swap_usd_sofr'
 
 quoteleg_currency  ="cad"
 quoteleg_fixingdays  = 0
@@ -635,6 +638,7 @@ quoteleg_telescopicvaluedates = false
 quoteleg_averagingmethod = "compound"
 quoteleg_notionalpaymentlag = 0
 quoteleg_index = 'index_cad_corra'
+quoteleg_swap = 'swap_cad_corra'
 
 # ----------------------------------------------------
 [zero_eurusd]
@@ -687,6 +691,8 @@ baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
 baseleg_index = 'index_usd_sofr'
+baseleg_swap = 'swap_usd_sofr'
+
 quoteleg_currency  ="eur"
 quoteleg_fixingdays  = 0
 quoteleg_calendar  = "usa-nyse,eur" 
@@ -700,6 +706,7 @@ quoteleg_telescopicvaluedates = false
 quoteleg_averagingmethod = "compound"
 quoteleg_notionalpaymentlag = 0
 quoteleg_index = 'index_eur_estr'
+quoteleg_swap = 'swap_eur_estr'
 # ----------------------------------------------------
 
 [zero_gbpusd]
@@ -752,6 +759,7 @@ baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
 baseleg_index = 'index_usd_sofr'
+baseleg_swap = 'swap_usd_sofr'
 
 quoteleg_currency  ="gbp"
 quoteleg_fixingdays  = 0
@@ -766,6 +774,7 @@ quoteleg_telescopicvaluedates = false
 quoteleg_averagingmethod = "compound"
 quoteleg_notionalpaymentlag = 0
 quoteleg_index = 'index_gbp_sonia'
+quoteleg_swap = 'swap_gbp_sonia'
 
 # ----------------------------------------------------
 
@@ -819,6 +828,7 @@ baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
 baseleg_index = 'index_usd_sofr'
+baseleg_swap = 'swap_usd_sofr' # this for single rate input
 
 quoteleg_currency  ="jpy"
 quoteleg_fixingdays  = 0
@@ -833,6 +843,7 @@ quoteleg_telescopicvaluedates = false
 quoteleg_averagingmethod = "compound"
 quoteleg_notionalpaymentlag = 0
 quoteleg_index = 'index_jpy_tona'
+quoteleg_swap = 'swap_jpy_tona' # this for single rate input
 
 # ----------------------------------------------------
 
@@ -886,6 +897,7 @@ baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
 baseleg_index = 'index_usd_sofr'
+baseleg_swap = 'swap_usd_sofr' # this for single rate input
 
 fixedleg_currency  ="krw"
 fixedleg_fixingdays  = 0
@@ -898,6 +910,7 @@ fixedleg_paymentcalendar = "usa-nyse,kor"
 fixedleg_paymentbdc = "mf"
 fixedleg_notionalpaymentlag = 0
 fixedleg_daycounter = 'act/365'
+fixedleg_swap = 'swap_krw_cd' # this for single rate input
 
 
 [bond_krw_ktb]
