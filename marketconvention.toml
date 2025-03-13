@@ -521,7 +521,6 @@ traits = "zero"
 
 [fxfwd_audusd]
 category = "fxfwd"
-helper_class = "FxForwardRateHelper"
 base_currency = "aud"
 quote_currency = "usd"
 fixingDays = 1
@@ -533,7 +532,6 @@ collateralCurve = "zero_usd"
 
 [ccs_audusd_aonia_sofr]
 category = "ccbasisswap"
-helper_class = "CCOvernightOvernightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,aus"
 bdc = "mf"
@@ -591,7 +589,6 @@ traits = "zero"
 
 [fxfwd_usdcad]
 category = "fxfwd"
-helper_class = "FxForwardRateHelper"
 base_currency = "usd"
 quote_currency = "cad"
 fixingDays = 1
@@ -603,7 +600,6 @@ collateralCurve = "zero_usd"
 
 [ccs_usdcad_sofr_corra]
 category = "ccbasisswap"
-helper_class = "CCOvernightOvernightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,can"
 bdc = "mf"
@@ -659,7 +655,6 @@ traits = "zero"
 
 [fxfwd_eurusd]
 category = "fxfwd"
-helper_class = "FxForwardRateHelper"
 base_currency = "eur"
 quote_currency = "usd"
 fixingDays = 2
@@ -671,7 +666,6 @@ collateralCurve = "zero_usd"
 
 [ccs_eurusd_sofr_estr]
 category = "ccbasisswap"
-helper_class = "CCOvernightOvernightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,eur"
 bdc = "mf"
@@ -727,7 +721,6 @@ traits = "zero"
 
 [fxfwd_gbpusd]
 category = "fxfwd"
-helper_class = "FxForwardRateHelper"
 base_currency = "gbp"
 quote_currency = "usd"
 fixingDays = 2
@@ -739,7 +732,6 @@ collateralCurve = "zero_usd"
 
 [ccs_gbpusd_sofr_sonia]
 category = "ccbasisswap"
-helper_class = "CCOvernightOvernightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,gbr"
 bdc = "mf"
@@ -796,7 +788,6 @@ traits = "zero"
 
 [fxfwd_usdjpy]
 category = "fxfwd"
-helper_class = "FxForwardRateHelper"
 base_currency = "usd"
 quote_currency = "jpy"
 fixingDays = 2
@@ -808,7 +799,6 @@ collateralCurve = "zero_usd"
 
 [ccs_usdjpy_sofr_tona]
 category = "ccbasisswap"
-helper_class = "CCOvernightOvernightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,jpn"
 bdc = "mf"
@@ -864,7 +854,6 @@ traits = "zero"
 
 [fxfwd_usdkrw]
 category = "fxfwd"
-helper_class = "FxForwardRateHelper"
 base_currency = "usd"
 quote_currency = "krw"
 fixingDays = 2
@@ -877,7 +866,6 @@ collateralCurve = "zero_usd"
 [ccs_usdkrw_sofr_fixed]
 category = "ccfloatswap"
 swap_type = "overnight"
-helper_class = "CCFixedOverightSwapMarketConvention"
 fixingdays = 2
 calendar = "usa-nyse,kor"
 bdc = "mf"
@@ -909,7 +897,7 @@ fixedleg_paymentlag = 2
 fixedleg_paymentcalendar = "usa-nyse,kor"
 fixedleg_paymentbdc = "mf"
 fixedleg_notionalpaymentlag = 0
-fixedleg_daycounter = 'act/365'
+fixedleg_daycounter = 'act365'
 fixedleg_swap = 'swap_krw_cd' # this for single rate input
 
 
