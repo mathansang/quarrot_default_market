@@ -970,3 +970,123 @@ base_currency = "usd"
 calendar = "usa-nyse,jpn"
 collateral_currency = "jpy"
 settlementDays = 2
+
+
+[shock_zero1p_up_quote_parallel]
+category = "shock"
+shock_target = "quote"
+shock_type = "parallel"
+shift = 0.0001
+# formula = "value + 1.5 * shift" - experimental
+description = "shock to quote 1bp up"
+
+
+[shock_zero1p_up_quote_tenor]
+category = "shock"
+shock_target = "quote"
+shock_type = "tenor"
+tenor = ['1m', '3m']
+shift = [0.0001, 0.0002]
+is_cumulative = false
+description = "shock to zero curve 1bp up"
+
+
+
+[shock_zero1p_up_quote_bucket]
+category = "shock"
+shock_target = "quote"
+shock_type = "bucket"
+start='1m'
+end='3m'
+equality = 'right'
+shift = 0.0001
+description = "shock to zero curve 1bp up"
+
+
+
+[shock_zero1p_up_quote_bucket_multiple]
+category = "shock"
+shock_target = "quote"
+shock_type = "bucket_multiple"
+bucket = ['1m', '3m']
+shift = [0.0001, 0.0002]
+description = "shock to zero curve 1bp up"
+
+
+[shock_zero1p_up_zero_parallel]
+category = "shock"
+shock_target = "zero"
+shock_type = "parallel"
+shift = 0.0001
+# formula = "value + 1.5 * shift" - experimental
+description = "shock to zero curve 1bp up"
+
+
+# [shock_zero1p_dn_tenor]
+# category = "shock"
+# shock_target = "zero"
+# shock_type = "tenor"
+# tenor = ['1m', '3m']
+# shift = [0.0001, 0.0002]
+# description = "shock to zero curve 1bp up"
+
+
+[shock_zero1p_dn_zero_bucket]
+category = "shock"
+shock_target = "zero"
+shock_type = "bucket"
+start = '1m'
+end = '3m'
+equality = 'right'
+shift = 0.0001
+description = "shock to zero curve 1bp up"
+
+
+
+[shock_zero1p_dn_zero_bucket_multiple]
+category = "shock"
+shock_target = "zero"
+shock_type = "bucket_multiple"
+bucket = ['1m', '3m', '6m']
+shift = [0.0001, 0.0002, 0.0001]
+description = "shock to zero curve 1bp up"
+
+
+
+[shock_zero100p_up_zero_triangle] # single item to be extracted
+category = "shock"
+shock_target = "zero"
+shock_type = "triangle"
+start = 0.25
+mid = 0.5
+end = 0.75
+shift = 0.0001
+description = "shock to zero curve 100bp up"
+# shock_maturity = "10y" - experimental
+
+
+[shock_zero100p_up_zero_triangle_multiple] # 3 items to be extracted
+category = "shock"
+shock_target = "zero"
+shock_type = "triangle_multiple"
+bucket = [0.25, 0.5, 0.75]
+shift = [0.0001, 0.0002, 0.0001]
+description = "shock to zero curve 100bp up"
+# shock_maturity = "10y" - experimental
+
+
+# [shock_composite1]
+# category = "shock"
+# shock_type = "composite"
+# shock_list = ["zero1p_up", "zero1p_dn"]
+
+
+# [shock_eq100p_up]
+# category = "shock"
+# shock_target = "quote"
+# shock_type = "value"
+# shift = 100
+# formula = "target * (1 + shift)"
+
+
+
