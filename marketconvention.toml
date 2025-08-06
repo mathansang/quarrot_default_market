@@ -135,57 +135,61 @@ iborIndexTenor = "3m"
 
 [swap_krw_cms]
 category = "swap"
-swap_type = "fixedfloat"
+swap_type = "general"
 currency = "krw"
 settlementDays = 1
 calendar = "kor"
 
-fixedFrequency = "Quarterly"
-fixedConvention = 1
-fixedDayCounter = "Actual/365 (Fixed)"
-fixedEndofmonth = false
-fixedCalendar = "kor"
-fixedCurrency = "krw"
+leg1Type ="fixed"
+leg1Frequency = "Quarterly"
+leg1Convention = 1
+leg1DayCounter = "Actual/365 (Fixed)"
+leg1Endofmonth = false
+leg1Calendar = "kor"
+leg1Currency = "krw"
 
-floatFrequency = "Quarterly"
-floatConvention = 1
-floatEndofmonth = false
-floatCalendar = "kor"
-floatIsInArrears = false
-floatCurrency = "krw"
+leg2Type ="float"
+leg2Frequency = "Quarterly"
+leg2Convention = 1
+leg2Endofmonth = false
+leg2Calendar = "kor"
+leg2IsInArrears = false
+leg2Currency = "krw"
 
-floatIndex = "index_krw_cms"
-floatIndexTenor = "10y"
-floatIndexFixingDays = 1
-floatResetFrequency = "3m"
+leg2Index = "index_krw_cms"
+leg2IndexTenor = "5y"
+leg2IndexFixingDays = 1
+leg2ResetFrequency = "3m"
 
 
 
 [swap_krw_cmt]
 category = "swap"
-swap_type = "fixedfloat"
+swap_type = "general"
 currency = "krw"
 settlementDays = 1
 calendar = "kor"
 
-fixedFrequency = "Quarterly"
-fixedConvention = 1
-fixedDayCounter = "Actual/365 (Fixed)"
-fixedEndofmonth = false
-fixedCalendar = "kor"
-fixedCurrency = "krw"
+leg1Type ="fixed"
+leg1Frequency = "Quarterly"
+leg1Convention = 1
+leg1DayCounter = "Actual/365 (Fixed)"
+leg1Endofmonth = false
+leg1Calendar = "kor"
+leg1Currency = "krw"
 
-floatFrequency = "Quarterly"
-floatConvention = 1
-floatEndofmonth = false
-floatCalendar = "kor"
-floatIsInArrears = false
-floatCurrency = "krw"
+leg2Type ="float"
+leg2Frequency = "Quarterly"
+leg2Convention = 1
+leg2Endofmonth = false
+leg2Calendar = "kor"
+leg2IsInArrears = false
+leg2Currency = "krw"
 
-floatIndex = "index_krw_cms"
-floatIndexTenor = "10y"
-floatIndexFixingDays = 1
-floatResetFrequency = "3m"
+leg2Index = "index_krw_cmt"
+leg2IndexTenor = "10y"
+leg2IndexFixingDays = 1
+leg2ResetFrequency = "3m"
 
 
 [swap_default_general]
@@ -685,6 +689,7 @@ baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
 baseleg_index = 'index_usd_sofr'
+baseleg_indextenor = "on"
 baseleg_swap = 'swap_usd_sofr'
 
 quoteleg_currency  ="eur"
@@ -700,6 +705,7 @@ quoteleg_telescopicvaluedates = false
 quoteleg_averagingmethod = "compound"
 quoteleg_notionalpaymentlag = 0
 quoteleg_index = 'index_eur_estr'
+quoteleg_indextenor = "on"
 quoteleg_swap = 'swap_eur_estr'
 # ----------------------------------------------------
 
@@ -885,6 +891,8 @@ baseleg_telescopicvaluedates = false
 baseleg_averagingmethod = "compound"
 baseleg_notionalpaymentlag = 0
 baseleg_index = 'index_usd_sofr'
+baseleg_indextenor = "on"
+
 baseleg_swap = 'swap_usd_sofr' # this for single rate input
 
 fixedleg_currency  ="krw"
