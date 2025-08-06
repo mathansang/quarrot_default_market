@@ -972,6 +972,23 @@ collateral_currency = 'jpy'
 settlementDays = 2
 
 
+[shock_quote1p]
+category = 'shock'
+shock_target = 'quote'
+shock_type = 'parallel'
+shift = 0.0001
+# formula = 'value + 1.5 * shift' - experimental
+description = 'shock to quote 1bp up'
+
+[shock_zero1p]
+category = 'shock'
+shock_target = 'zero'
+shock_type = 'parallel'
+shift = 0.0001
+# formula = 'value + 1.5 * shift' - experimental
+description = 'shock to quote 1bp up'
+
+
 [shock_zero1p_up_quote_parallel]
 category = 'shock'
 shock_target = 'quote'
