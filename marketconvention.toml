@@ -353,6 +353,14 @@ calendar = 'usa'
 averagingMethod = 1
 
 
+[swaption_krw_cd]
+category = 'swaption'
+swaption_type = 'european'
+underlyingSwap = 'swap_krw_cd'
+settlementType = 'physical' # 'cash'
+settlementMethod = 'physicalCleared' # 'parYieldCurve'
+currency = 'krw'
+
 [zero_usd_sofr]
 category = 'yieldcurve'
 swap_type = 'overnight'
@@ -972,7 +980,7 @@ collateral_currency = 'jpy'
 settlementDays = 2
 
 
-[shock_quote1p]
+[shock_quote1bp]
 category = 'shock'
 shock_target = 'quote'
 shock_type = 'parallel'
@@ -980,7 +988,7 @@ shift = 0.0001
 # formula = 'value + 1.5 * shift' - experimental
 description = 'shock to quote 1bp up'
 
-[shock_zero1p]
+[shock_zero1bp]
 category = 'shock'
 shock_target = 'zero'
 shock_type = 'parallel'
@@ -989,7 +997,7 @@ shift = 0.0001
 description = 'shock to quote 1bp up'
 
 
-[shock_zero1p_up_quote_parallel]
+[shock_zero1bp_up_quote_parallel]
 category = 'shock'
 shock_target = 'quote'
 shock_type = 'parallel'
@@ -998,7 +1006,7 @@ shift = 0.0001
 description = 'shock to quote 1bp up'
 
 
-[shock_zero1p_up_quote_tenor]
+[shock_zero1bp_up_quote_tenor]
 category = 'shock'
 shock_target = 'quote'
 shock_type = 'tenor'
@@ -1009,28 +1017,28 @@ description = 'shock to zero curve 1bp up'
 
 
 
-[shock_zero1p_up_quote_bucket]
+[shock_zero1bp_up_quote_bucket]
 category = 'shock'
 shock_target = 'quote'
 shock_type = 'bucket'
-start='1m'
-end='3m'
+start='2Y'
+end='5Y'
 equality = 'right'
 shift = 0.0001
 description = 'shock to zero curve 1bp up'
 
 
 
-[shock_zero1p_up_quote_bucket_multiple]
+[shock_zero1bp_up_quote_bucket_group]
 category = 'shock'
 shock_target = 'quote'
-shock_type = 'bucket_multiple'
-bucket = ['1m', '3m']
+shock_type = 'bucket_group'
+bucket = ['2Y', '5Y']
 shift = [0.0001, 0.0002]
 description = 'shock to zero curve 1bp up'
 
 
-[shock_zero1p_up_zero_parallel]
+[shock_zero1bp_up_zero_parallel]
 category = 'shock'
 shock_target = 'zero'
 shock_type = 'parallel'
@@ -1039,7 +1047,7 @@ shift = 0.0001
 description = 'shock to zero curve 1bp up'
 
 
-# [shock_zero1p_dn_tenor]
+# [shock_zero1bp_dn_tenor]
 # category = 'shock'
 # shock_target = 'zero'
 # shock_type = 'tenor'
@@ -1048,49 +1056,57 @@ description = 'shock to zero curve 1bp up'
 # description = 'shock to zero curve 1bp up'
 
 
-[shock_zero1p_dn_zero_bucket]
+[shock_zero1bp_dn_zero_bucket]
 category = 'shock'
 shock_target = 'zero'
 shock_type = 'bucket'
-start = '1m'
-end = '3m'
+start = '3Y'
+end = '5Y'
 equality = 'right'
 shift = 0.0001
 description = 'shock to zero curve 1bp up'
 
 
 
-[shock_zero1p_dn_zero_bucket_multiple]
+[shock_zero1bp_dn_zero_bucket_group]
 category = 'shock'
 shock_target = 'zero'
-shock_type = 'bucket_multiple'
-bucket = ['1m', '3m', '6m']
+shock_type = 'bucket_group'
+bucket = ['2Y', '3Y', '5Y']
 shift = [0.0001, 0.0002, 0.0001]
 description = 'shock to zero curve 1bp up'
 
 
 
-[shock_zero100p_up_zero_triangle] # single item to be extracted
+[shock_zero100bp_up_zero_triangle] # single item to be extracted
 category = 'shock'
 shock_target = 'zero'
 shock_type = 'triangle'
-start = 0.25
-mid = 0.5
-end = 0.75
+start = 2
+mid = 3
+end = 5
 shift = 0.0001
 description = 'shock to zero curve 100bp up'
 # shock_maturity = '10y' - experimental
 
 
-[shock_zero100p_up_zero_triangle_multiple] # 3 items to be extracted
+[shock_zero100bp_up_zero_triangle_group] # 3 items to be extracted
 category = 'shock'
 shock_target = 'zero'
-shock_type = 'triangle_multiple'
-bucket = [0.25, 0.5, 0.75]
+shock_type = 'triangle_group'
+bucket = [2, 3, 5]
 shift = [0.0001, 0.0002, 0.0001]
 description = 'shock to zero curve 100bp up'
 # shock_maturity = '10y' - experimental
 
+
+[shock_vol1bp]
+category = 'shock'
+shock_target = 'quote'
+shock_type = 'index'
+shift = 0.0001
+description = 'shock to vol curve 1bp up'
+# formula = 'value + 1.5 * shift' - experimental
 
 # [shock_composite1]
 # category = 'shock'
@@ -1098,7 +1114,7 @@ description = 'shock to zero curve 100bp up'
 # shock_list = ['zero1p_up', 'zero1p_dn']
 
 
-# [shock_eq100p_up]
+# [shock_eq100bp_up]
 # category = 'shock'
 # shock_target = 'quote'
 # shock_type = 'value'
