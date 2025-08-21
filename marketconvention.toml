@@ -525,6 +525,15 @@ extrapolationType = 'zeroflat'
 traits = 'zero'
 
 
+[zero_theory]
+category = 'yieldcurve'
+calendar = 'null'
+dayCounter = '30360'
+interpolationType = 'linear'
+extrapolationType = 'zeroflat'
+traits = 'zero'
+
+
 # ----------------------------------------------------
 [zero_audusd]
 category = 'ccbasiscurve'
